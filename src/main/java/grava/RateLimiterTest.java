@@ -8,9 +8,9 @@ import com.google.common.util.concurrent.RateLimiter;
 public class RateLimiterTest {
 	//速率是每秒两个许可	  
   public static void main(String args[]) {
-	  final RateLimiter rateLimiter = RateLimiter.create(2.0);
+	  final RateLimiter rateLimiter = RateLimiter.create(10*1000.0);
 
-	  System.out.println( rateLimiter.acquire(10) );
+	  System.out.println( rateLimiter.acquire(2*10*1000) );
 	  System.out.println( rateLimiter.acquire() );
 	  System.out.println( rateLimiter.acquire() );  
 	  System.out.println( rateLimiter.acquire() ); 
