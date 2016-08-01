@@ -58,7 +58,8 @@ public class HelloAkkaJava {
 		// Ask the 'greeter for the latest 'greeting'
 		// Reply should go to the "actor-in-a-box"
 		inbox.send(greeter, new Greet());
-
+		//inbox.send(greeter, new Object());
+		
 		// Wait 5 seconds for the reply with the 'greeting' message
 		final Greeting greeting1 = (Greeting) inbox.receive(Duration.create(5, TimeUnit.SECONDS));
 		System.out.println("Greeting: " + greeting1.message);
