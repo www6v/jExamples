@@ -24,7 +24,6 @@ public class MyPoolSizeCalculator extends PoolSizeCalculator {
  protected Runnable creatTask() {  
 	 return new Runnable() {
 
-		@Override
 		public void run() {
 			System.out.println("do something here");
 //			for( int i = 0; i< 1000*1000 ; i++) { 
@@ -43,7 +42,7 @@ public class MyPoolSizeCalculator extends PoolSizeCalculator {
  }  
    
  protected BlockingQueue createWorkQueue() {  
-  return new LinkedBlockingQueue<>();  
+  return new LinkedBlockingQueue();  
  }  
   
 }  

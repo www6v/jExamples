@@ -149,7 +149,6 @@ public class Murmur2 implements HashFunction {
 	}
 
 
-	@Override
 	public int hash32(final Object data) {
 		int value = -1;
 		byte[] bytes = getDataByteArr(data);
@@ -159,7 +158,6 @@ public class Murmur2 implements HashFunction {
 		return value;
 	}
 
-	@Override
 	public long hash64(final Object data) {
 		long value = -1;
 		byte[] bytes = getDataByteArr(data);

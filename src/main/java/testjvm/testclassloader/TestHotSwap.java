@@ -18,7 +18,6 @@ package testjvm.testclassloader;
      private Class hotClazz = null;
      private HotSwapURLClassLoader hotSwapCL = null;
  
-     @Override
      public void run() {
          try {
              while (true) {
