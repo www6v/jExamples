@@ -11,7 +11,7 @@ import scala.concurrent.duration.FiniteDuration;
 import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
+// https://github.com/typesafehub/activator-hello-akka#master
 public class HelloAkkaJava {
     public static class Greet implements Serializable {}
     public static class WhoToGreet implements Serializable {
