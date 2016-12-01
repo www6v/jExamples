@@ -1,4 +1,4 @@
-package info.yangguo.demo.attch_api.test4;
+package info.yangguo.demo.attach_api.test4;
 
 import javassist.ByteArrayClassPath;
 import javassist.ClassPool;
@@ -57,6 +57,7 @@ public class Transformer implements ClassFileTransformer {
                     method.addLocalVariable("__metricStartTime", CtClass.longType);
                     method.insertBefore("__metricStartTime = System.currentTimeMillis();");
                     method.insertAfter("System.out.println( System.currentTimeMillis() - __metricStartTime);");
+                    method.insertAfter("System.out.println( \"ww\" );");
                     isClassModified = true;
                 }
             }

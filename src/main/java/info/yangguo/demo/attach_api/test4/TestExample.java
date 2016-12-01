@@ -1,4 +1,4 @@
-package info.yangguo.demo.attch_api.test4;
+package info.yangguo.demo.attach_api.test4;
 
 import java.io.File;
 import java.lang.reflect.Method;
@@ -38,7 +38,9 @@ public class TestExample {
         /**
          * 为了减少设置classpath的做法，具体的类库路径需要自己设置
          */
-        ExtClasspathLoader.loadClasspath("/Users/yangguo/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.20.0-GA/a9cbcdfb7e9f86fbc74d3afae65f2248bfbf82a0");
+//        ExtClasspathLoader.loadClasspath("/Users/yangguo/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.20.0-GA/a9cbcdfb7e9f86fbc74d3afae65f2248bfbf82a0");
+        ExtClasspathLoader.loadClasspath("/home/ww/mavenRepository/org/javassist/javassist/3.21.0-GA/");
+                
         TestExample test = new TestExample();
         while (true) {
             test.doWork();
