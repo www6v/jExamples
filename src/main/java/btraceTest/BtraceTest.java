@@ -16,6 +16,7 @@ public class BtraceTest {
 					System.out.println("main");
 					try {
 						new BtraceTest().methodA();
+						new BtraceTest().methodB();
 						Thread.sleep(1000);
 						interrupt();
 					} catch (InterruptedException e) {
@@ -28,8 +29,17 @@ public class BtraceTest {
 	}
 	
 	public void methodA() {
+		String s = "";
 		for(int i=0; i<3; i++) {			
 			System.out.println( "Thread: " + Thread.currentThread().getName() + ", i :" + i );	
+			for( int j =0; j<10000; j++) {
+				s +=  ("jjjjjjjjjjjjjjjjjjjjjjjjj = " + j);
+			}
 		}		
+	}
+	
+	public void methodB() {
+	   System.out.println( "methodB ");
+	   throw  new RuntimeException("ttttt");
 	}
 }
