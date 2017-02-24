@@ -1,12 +1,19 @@
 package mbean;
 
-public class Hello implements HelloMXBean {   // HelloMBean
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.management.openmbean.CompositeData;
+
+public class Hello implements HelloMXBean  {   //  HelloMBean
+  
+    private Map map = new HashMap();
     
     private final String name;  
     private final int age;  
     private String email;  
     
-    private Book book;
+    private Book book;   //  不可用  -> HelloMBean 
       
     public Hello(String name, int age, String email) {  
         this.name = name;  
@@ -47,5 +54,26 @@ public class Hello implements HelloMXBean {   // HelloMBean
 	@Override
 	public void addBook(Book book) {
 		this.book = book;
-	}  
+	}
+
+	@Override
+	public Map getTestMap() {
+        map.put("111", "222");
+		return map;
+	}
+
+	@Override
+	public void setTestMap(Map testMap) {	
+		map.putAll(testMap);
+	}
+//
+//	@Override
+//	public void addTestMap(Map testMap) {
+//		map.putAll(testMap);	
+//	} 
+//	
+//	@Override
+//	public void addTestMapToString(String key, String value) {
+//		map.put(key, value);
+//	}  	
 }  
