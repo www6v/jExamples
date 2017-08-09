@@ -21,8 +21,8 @@ import java.util.Set;
 
 		   JmxTest jmxTest = new JmxTest();
 		   try {
-//			jmxTest.test1StandardMBean();
-			jmxTest.test2DynamicMBean();
+			jmxTest.test1StandardMBean();
+//			jmxTest.test2DynamicMBean();
 //			jmxTest.test3RequiredModelMBean();
 			
 			Thread.sleep(Long.MAX_VALUE);
