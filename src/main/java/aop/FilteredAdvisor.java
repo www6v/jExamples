@@ -21,17 +21,17 @@ public class FilteredAdvisor implements PointcutAdvisor {
     /** 
      * Get the Pointcut that drives this advisor. 
      */  
-    @Override  
+
     public Pointcut getPointcut() {  
         return pointcut;  
     }  
   
-    @Override  
+
     public Advice getAdvice() {  
         return advice;  
     }  
   
-    @Override  
+
     public boolean isPerInstance() {  
         return false;  
     }  

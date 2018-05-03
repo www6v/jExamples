@@ -23,7 +23,7 @@ public class TestFastDfs {
     public String conf_filename = "D:\\workspace\\testProject\\src\\main\\resources\\fdfs_client.conf";
     //public String local_filename = "D:\\stsworkspace\\fastdfs-demo\\src\\main\\resources\\fdfs_client.conf";
 
-    public String local_filename = "D:\\workspace\\testProject\\src\\main\\resources\\img12.jpg";
+    public String local_filename = "D:\\workspace\\testProject\\src\\main\\resources\\b1.jpg";
 
     @Before
     public void setUp() throws Exception {
@@ -66,7 +66,7 @@ public class TestFastDfs {
     }
 
 
-    @Test
+//    @Test
     public void testGetFileInfo(){
         try {
             ClientGlobal.init(conf_filename);
@@ -89,7 +89,7 @@ public class TestFastDfs {
         }
     }
 
-    @Test
+//    @Test
     public void testGetFileMate(){
         try {
             ClientGlobal.init(conf_filename);

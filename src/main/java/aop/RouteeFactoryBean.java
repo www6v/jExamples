@@ -108,17 +108,16 @@ implements FactoryBean, MethodInterceptor, InitializingBean {
 //		afterPropertiesSet();
 //	}
 
-	@Override
+
 	public Object getObject() throws Exception {
 		return serviceProxy;
 	}
 
-	@Override
+
 	public Class getObjectType() {
 		return getServiceInterface();
 	}
 
-	@Override
 	public boolean isSingleton() {
 		return true;
 	}
@@ -220,7 +219,7 @@ implements FactoryBean, MethodInterceptor, InitializingBean {
 //		this.useBroadCast = useBroadCast;
 //	}
 
-	@Override
+
 	public Object invoke(MethodInvocation invocation) throws Throwable {
 //		if (target != null) {
 //			try {
