@@ -17,8 +17,8 @@
         <spring.version>4.1.1.RELEASE</spring.version>
         <!----><rocketmq.version>4.0.0-incubating</rocketmq.version>
 
-        <!--<rocketmq.version>4.2.0</rocketmq.version>-->
-        <!--<rocketmq.version>4.1.0</rocketmq.version>-->
+        <!--<middleware.rocketmq.version>4.2.0</middleware.rocketmq.version>-->
+        <!--<middleware.rocketmq.version>4.1.0</middleware.rocketmq.version>-->
 
 
     </properties>

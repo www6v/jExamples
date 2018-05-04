@@ -5,9 +5,9 @@
 //import java.util.Timer;
 //import java.util.TreeSet;
 //public  class  HotAgent {
-// 
+//
 //    protected  static  Set<String>  clsnames=new TreeSet<String>();
-// 
+//
 //    public  static  void  premain(String  agentArgs, Instrumentation  inst)  throws Exception {
 //        ClassFileTransformer  transformer =new ClassTransform(inst);
 //        inst.addTransformer(transformer);
@@ -24,14 +24,14 @@
 //import java.lang.instrument.ClassDefinition;
 //import java.lang.instrument.Instrumentation;
 //import java.util.TimerTask;
-// 
+//
 //public  class  ReloadTask  extends  TimerTask {
 //    private  Instrumentation  inst;
-// 
+//
 //    protected  ReloadTask(Instrumentation  inst){
 //        this.inst=inst;
 //    }
-// 
+//
 //    @Override
 //    public  void  run() {
 //       try{
@@ -48,7 +48,7 @@
 //            ex.printStackTrace();
 //       }
 //    }
-// 
+//
 //    private  byte[]  loadClassBytes(Class  cls,String  clsname) throws  Exception{
 //        System.out.println(clsname+":"+cls);
 //        InputStream  is=cls.getClassLoader().getSystemClassLoader().getResourceAsStream(clsname);
