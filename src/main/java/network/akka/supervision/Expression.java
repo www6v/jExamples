@@ -83,12 +83,12 @@ public interface Expression {
       this.value = value;
     }
 
-    @Override
+
     public Expression getLeft() {
       return this;
     }
 
-    @Override
+
     public Expression getRight() {
       return this;
     }
