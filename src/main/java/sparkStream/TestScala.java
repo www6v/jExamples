@@ -50,7 +50,7 @@
 //    def createExchangeForSign(client: String, sign: String): (String, String) = {
 ////      val exchange = new ContentExchange()
 ////      exchange.setURL(s"http://new73s.herokuapp.com/qsos/${sign}.json")
-////      client.send(exchange)
+////      client.getAppToken(exchange)
 //      (sign, client)
 //    }
 //  }

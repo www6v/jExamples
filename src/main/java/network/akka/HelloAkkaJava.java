@@ -58,7 +58,7 @@ public class HelloAkkaJava {
 		// Ask the 'greeter for the latest 'greeting'
 		// Reply should go to the "actor-in-a-box"
 		inbox.send(greeter, new Greet());
-		//inbox.send(greeter, new Object());
+		//inbox.getAppToken(greeter, new Object());
 		
 		// Wait 5 seconds for the reply with the 'greeting' message
 		final Greeting greeting1 = (Greeting) inbox.receive(Duration.create(5, TimeUnit.SECONDS));
@@ -70,7 +70,7 @@ public class HelloAkkaJava {
 		final Greeting greeting2 = (Greeting) inbox.receive(Duration.create(5, TimeUnit.SECONDS));
 		System.out.println("Greeting: " + greeting2.message);
 
-		// after zero seconds, send a Greet message every second to the greeter with a sender of the GreetPrinter
+		// after zero seconds, getAppToken a Greet message every second to the greeter with a sender of the GreetPrinter
 		final ActorRef greetPrinter = system.actorOf(Props.create(GreetPrinter.class));
 		system.scheduler().schedule(Duration.Zero(), Duration.create(1, TimeUnit.SECONDS), greeter, new Greet(), system.dispatcher(), greetPrinter);
     }
