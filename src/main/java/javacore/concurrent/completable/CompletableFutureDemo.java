@@ -1,4 +1,4 @@
-package javacore.concurrent;
+package javacore.concurrent.completable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
