@@ -9,6 +9,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import org.json.JSONObject;
 import org.springframework.http.ResponseEntity;
 
+import java.io.InputStream;
 import java.util.Base64;
 import java.util.Map;
 
@@ -17,16 +18,23 @@ import java.util.Map;
  */
 public class UnirestTest {
     public static void main(String args[]) throws UnirestException {
-        getAndPost();
+        String appKey = "4F0DECA63FD44DFB864214DB3C0C44E1";
+        String appSeceret = "QscLhlCBfNdoT61i3C0n";
+        String appToken = getAppTokenFromService(appKey, appSeceret);
+        String dataUrl = getAndPost(appToken);
 
+        getFeaturedb(dataUrl, appToken);
 
-//        String appKeyMock = "41AB0123F5214BC1AD7CF633943A7DFB";
-//        String appSecretMock = "tJR1AW56FZtcx1xnAdoJ";
-//
+//        String appKeyMock = "41AB0123F5214BC1AD7CF633943A7DFB"; /// for test env
+//        String appSecretMock = "tJR1AW56FZtcx1xnAdoJ"; /// for test env
+//        String appkey = "4F0DECA63FD44DFB864214DB3C0C44E1"; /// for test env
+//		  String appSecret = "QscLhlCBfNdoT61i3C0n"; /// for test env
+//        String appKeyMock = "E4E8CDAD8F094E14BF4A2C6E25209259"; /// for product env
+//        String appSecretMock = "g2aEVvNKHrrSjV1Sqy3x"; /// for product env
 //        String appToken = getAppTokenFromService(appKeyMock, appSecretMock);
     }
 
-    private static void getAndPost() throws UnirestException {
+    private static String getAndPost(String appToken) throws UnirestException {
         //get
 //        HttpResponse<Target> targetResponse = Unirest.get("https://dev.shai.cloud/api/app/targets/11111").asObject(Target.class);
 //        Target targetObject = targetResponse.getBody();
@@ -42,13 +50,14 @@ public class UnirestTest {
 //
 //                .queryString("app/appKey", "1")
 //                .asJson();
+//                System.out.println(jsonResponse);
 
-        //        System.out.println(jsonResponse);
+        Target target =null;
 
-        String appToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXZlbG9wZXJJZCI6MTQ5LCJwZXJtaXNzaW9ucyI6WyJPUiIsIlJFIiwiTUkiXSwic2NvcGUiOlsidHJ1c3QiLCJyZWFkIiwid3JpdGUiXSwiYXBwSWQiOjM2NywiZXhwIjoxNTM2MDUxNDY1LCJhdXRob3JpdGllcyI6WyJST0xFX0FQUCJdLCJqdGkiOiJkMTA2M2Y3OS00OWNkLTQ4ODItOTJiMC0wNjg3OWVhOGE1ODciLCJjbGllbnRfaWQiOiJhcHAvNEYwREVDQTYzRkQ0NERGQjg2NDIxNERCM0MwQzQ0RTEifQ.XHa3fVwLyqLzA5NfNm2gH4gaDVyiMH-EYcnYVp4yya2Ax_geTXEAE2Vki4aSmSL3aWUYWuG9uxbe__pVae15tk6JZjGnWW_awYmc-cCHUS4fDVquQKia5kVcjseg_tvU8m8DieDBhA4onxwrMSTfsKOPpbzWj1LypR4CGsjiZljUQSLNpTGVh72Teb4_AHVHvbGed5cehXNxYkW6nAHlRNNp2CIqoIVRbJoQMDzglonkU70_ZjUhJMwIZ4oZp8P7V5qeyDeNYGY-pwrK6BS8tCpO-WtbKigfBAvQzaBLjLwEPULTpDSE47Kufap_PvwVaZEe0YtTcF-SWFGmRXE-bQ";
         try {
             ///  1174
-            HttpResponse<JsonNode> targetResponse = Unirest.get("https://tst.shai.cloud" + "/api/app/targets/"  + "11111")
+            String targetId = "1385";
+            HttpResponse<JsonNode> targetResponse = Unirest.get("https://tst.shai.cloud" + "/api/app/targets/"  + targetId)
                     .header("Authorization", "Bearer " + appToken)
                     .asObject(JsonNode.class);
             JsonNode body = targetResponse.getBody();
@@ -63,12 +72,14 @@ public class UnirestTest {
             System.out.print("s:"+s);
             System.out.print("status"+ status);
 
-            Target target = JSON.parseObject(s, new TypeReference<Target>() {});
+            target = JSON.parseObject(s, new TypeReference<Target>() {});
             System.out.print("getDataUrl" + target.getDataUrl());
 
         } catch (UnirestException e) {
             System.out.print(e);
         }
+
+        return target.getDataUrl();
     }
 
     public static String getAppTokenFromService(String appKey, String appSecret) {
@@ -93,6 +104,8 @@ public class UnirestTest {
         return getToken(value, "client_credentials");
     }
 
+    public static final String PRODUCT_ENV_URL =  "https://lenovo-mr.com";
+
     static String getToken( String authorization,
                                   String grantType) {
         ///
@@ -100,6 +113,7 @@ public class UnirestTest {
         String access_token = "";
         try {
             HttpResponse<JsonNode> jsonResponse = Unirest.post("https://tst.shai.cloud/oauth/token?grant_type=" + grantType)
+//            HttpResponse<JsonNode> jsonResponse = Unirest.post(PRODUCT_ENV_URL + "/oauth/token?grant_type=" + grantType)
                     .header("Authorization", authorization)
                     .asJson();
             JSONObject object = jsonResponse.getBody().getObject();
@@ -112,4 +126,16 @@ public class UnirestTest {
 
         return access_token;
     }
+
+    private static InputStream getFeaturedb(String dataUrl, String appToken) throws UnirestException {
+        HttpResponse<InputStream> targetResponse = null;
+
+        targetResponse = Unirest.get(dataUrl)
+                .header("Authorization", "Bearer " + appToken)
+                .asBinary();
+
+        InputStream body = targetResponse.getBody();
+        return body;
+    }
+
 }
