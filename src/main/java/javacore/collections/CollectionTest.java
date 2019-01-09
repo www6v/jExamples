@@ -68,7 +68,7 @@ public class CollectionTest {
                 .collect(Collectors.joining());
 
         HOSTING.entrySet().stream()
-                .filter(map -> "aws.amazon.com".equals(map.getValue())).forEach();
+                .filter(map -> "aws.amazon.com".equals(map.getValue())).forEach(x->{});
         System.out.println("With Java 8 : " + result);
     }
 }

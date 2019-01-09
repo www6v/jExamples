@@ -1,0 +1,29 @@
+<ConfigUser>
+    <type>ADMIN</type>
+    <users>
+        <AdminUser>
+            <name>zhaoyb</name>
+            <pwd>abc123</pwd>
+            <ip>
+                <string>127.0.0.1</string>
+                <string>203.119.80.128</string>
+            </ip>
+        </AdminUser>
+        <AdminUser>
+            <name>liangqunxing</name>
+            <pwd>abc123</pwd>
+            <ip>
+                <string>127.0.0.1</string>
+                <string>202.173.100.126</string>
+            </ip>
+        </AdminUser>
+        <AdminUser>
+            <name>liuyu</name>
+            <pwd>abc123</pwd>
+            <ip>
+                <string>127.0.0.1</string>
+                <string>203.119.80.108</string>
+            </ip>
+        </AdminUser>
+    </users>
+</ConfigUser>
