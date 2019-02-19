@@ -1,4 +1,4 @@
-package javacore.xml.test;
+package javacore.xml.common.degister.test;
 
 import java.util.List;
 

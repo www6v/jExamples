@@ -1,4 +1,4 @@
-package javacore.xml;
+package javacore.xml.xstream;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 

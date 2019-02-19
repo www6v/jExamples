@@ -1,7 +1,6 @@
-package javacore.xml;
+package javacore.xml.xstream;
 
 import com.thoughtworks.xstream.XStream;
-import org.springframework.core.io.ClassPathResource;
 
 import java.io.File;
 import java.io.FileInputStream;

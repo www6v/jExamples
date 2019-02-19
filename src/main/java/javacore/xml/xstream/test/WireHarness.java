@@ -1,4 +1,4 @@
-package javacore.xml.test;
+package javacore.xml.xstream.test;
 
 public class WireHarness {
 

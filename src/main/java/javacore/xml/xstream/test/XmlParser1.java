@@ -1,13 +1,10 @@
-package javacore.xml.test;
+package javacore.xml.xstream.test;
 
 import com.thoughtworks.xstream.XStream;
-import javacore.xml.AdminUser;
-import javacore.xml.ConfigUsers;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.util.List;
 
 public class XmlParser1 {
     public static void main(String args[]) throws Exception {
