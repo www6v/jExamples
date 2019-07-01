@@ -5,9 +5,12 @@ package javacore.string;
  */
 public class StringFormat {
     public static void main(String arg[]) {
-        String fdbName = "features.fdb";
-        String f = String.format("transfdb.sh %s", fdbName);
+//        String fdbName = "features.fdb";
+//        String f = String.format("transfdb.sh %s", fdbName);
+//
+//        System.out.println(f);
 
-        System.out.println(f);
+        Long aLong = Long.valueOf("1111");
+        System.out.println(aLong);
     }
 }
