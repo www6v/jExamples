@@ -1,0 +1,27 @@
+apiVersion: istio.kun/v1alpha1
+kind: IstioIngress
+metadata:
+ name: proxy
+spec:
+ replicas: 1
+ http:
+   servers:
+   - port:
+       name: http
+       number: 80
+       protocol: HTTP
+   routers:
+   - match:
+     - uri:
+         #exact: /helloworld
+         exact: /bookinfo-example
+     route:
+     - destination:
+         #service: helloworld.prj-istioinject.svc.x5.uae
+         service: productpage
+         port: 9080
+         subset:
+           name: v1
+           labels:
+             version: v1
+       weight: 100
