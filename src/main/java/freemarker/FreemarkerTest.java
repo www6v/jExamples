@@ -33,7 +33,7 @@ public class FreemarkerTest {
 
 
 //            Map data = new HashMap<>();
-            List<Student> stuList = new ArrayList<>();
+            List<Student> stuList = new ArrayList<Student>();
             stuList.add(new Student(1, "小米", 11, "北京昌平回龙观"));
             stuList.add(new Student(2, "小米2", 12, "北京昌平回龙观"));
             stuList.add(new Student(3, "小米3", 13, "北京昌平回龙观"));
@@ -46,7 +46,7 @@ public class FreemarkerTest {
             map.put("stuList", stuList);
 
 
-            List<RtcVar> rtcVarList = new ArrayList<>();
+            List<RtcVar> rtcVarList = new ArrayList<RtcVar>();
 
             for(int i=1; i<=10; i++) {
                 for(int j =1; j<=100; j++) {

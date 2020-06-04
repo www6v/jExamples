@@ -28,7 +28,7 @@ public class CollectionTest {
     }
 
     private static void listSort() {
-        List<Float> scoreList = new ArrayList<>();
+        List<Float> scoreList = new ArrayList<Float>();
 
         scoreList.add( 321.347f );
         scoreList.add( 798.493f );
@@ -39,7 +39,7 @@ public class CollectionTest {
     }
 
     private static void printList() {
-        List<Long> objects = new ArrayList<>();
+        List<Long> objects = new ArrayList<Long>();
         objects.add(12132L);
         objects.add(122L);
         objects.add(132L);
@@ -49,7 +49,7 @@ public class CollectionTest {
     }
 
     private static void jdk8Map() {
-        Map<Integer, String> HOSTING = new HashMap<>();
+        Map<Integer, String> HOSTING = new HashMap<Integer, String>();
         HOSTING.put(1, "linode.com");
         HOSTING.put(2, "heroku.com");
         HOSTING.put(3, "digitalocean.com");
