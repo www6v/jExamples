@@ -32,8 +32,30 @@ public class JSqlParserTest {
      */
     @Test
     public void testTablesNamesFinder() throws JSQLParserException {
-        String sql = "select vend_id, vend_name, vend_address, vend_city, vend_state, vend_zip, vend_country from vendors";
+//        String sql = "select vend_id, vend_name, vend_address, vend_city, vend_state, vend_zip, vend_country from vendors";
 
+        String sql = "SELECT\n" +
+                "            e.id as employee_id,\n" +
+                "            e.role_names,\n" +
+                "            e.employee_name,\n" +
+                "            e.employee_no,\n" +
+                "            e.email,\n" +
+                "            e.email_status,\n" +
+                "            e.mob_no,\n" +
+                "            e.notify_by_text,\n" +
+                "            e.notify_by_phone,\n" +
+                "            e.employee_status,\n" +
+                "            e.company_account,\n" +
+                "            e.department_id,\n" +
+                "            d.department_name,\n" +
+                "            e.shift_id,\n" +
+                "            s.shift_name\n" +
+                "        from rps_employee e\n" +
+                "        left join rps_department d\n" +
+                "            on e.department_id = d.id\n" +
+                "        left join rps_shift s\n" +
+                "            on e.shift_id = s.id\n" +
+                "        where e.employee_no = 'superadmin'";
         CCJSqlParserManager parserManager = new CCJSqlParserManager();
 
         Statement statement = parserManager.parse(new StringReader(sql));
@@ -41,6 +63,7 @@ public class JSqlParserTest {
 
         TablesNamesFinder tablesNamesFinder = new TablesNamesFinder();
         List<String> tableList = tablesNamesFinder.getTableList(selectStatement);
+
         tableList.forEach(System.err::println);
 
     }
@@ -50,7 +73,7 @@ public class JSqlParserTest {
      *
      * @throws JSQLParserException
      */
-    @Test
+//    @Test
     public void testRetrieveAllSelectedItems() throws JSQLParserException {
         Select stmt = (Select) CCJSqlParserUtil.parse("SELECT col1 AS a, col2 AS b, col3 AS c FROM table WHERE col1 = 10 AND col2 = 20 AND col3 = 30");
 
@@ -71,7 +94,7 @@ public class JSqlParserTest {
      *
      * @throws JSQLParserException
      */
-    @Test
+//    @Test
     public void testBuildSimpleSelect() throws JSQLParserException {
         Select select = SelectUtils.buildSelectFromTable(new Table("mytable"));
         Select select2 = SelectUtils.buildSelectFromTableAndExpressions(new Table("mytable"), new Column("a"), new Column("b"));
@@ -86,7 +109,7 @@ public class JSqlParserTest {
      *
      * @throws JSQLParserException
      */
-    @Test
+//    @Test
     public void replaceStringValues() throws JSQLParserException {
         String sql = "SELECT NAME, ADDRESS, COL1 FROM USER WHERE SSN IN ('11111111111111', '22222222222222');";
         Select select = (Select) CCJSqlParserUtil.parse(sql);
@@ -117,7 +140,7 @@ public class JSqlParserTest {
      *
      * @throws JSQLParserException
      */
-    @Test
+//    @Test
     public void replaceColumnNamesWithinWhere() throws JSQLParserException {
         Select stmt = (Select) CCJSqlParserUtil.parse("SELECT col1 AS a, col2 AS b, col3 AS c FROM table WHERE col_1 = 10 AND col_2 = 20 AND col_3 = 30");
         System.err.println("before " + stmt.toString());
@@ -132,7 +155,7 @@ public class JSqlParserTest {
         System.err.println("after " + stmt.toString());
     }
 
-    @Test
+//    @Test
     public void selectUtilsTest() throws JSQLParserException {
         /**
          *  find table, all columns

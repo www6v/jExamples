@@ -119,5 +119,6 @@
     <orderEntry type="library" name="Maven: io.prometheus:simpleclient_common:0.6.0" level="project" />
     <orderEntry type="library" name="Maven: io.prometheus:simpleclient_pushgateway:0.6.0" level="project" />
     <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.5.3" level="project" />
   </component>
 </module>
