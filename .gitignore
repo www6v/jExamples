@@ -1,0 +1,15 @@
+.project
+.classpath
+.factorypath
+.springBeans
+.settings/
+.apt_generated/
+.idea/
+.sts3*
+.sts4*
+target
+*.class
+*.log
+.metadata/
+*.iml
+
