@@ -2,19 +2,11 @@ package javacore.mybatis_interceptor;
 
 
 import net.sf.jsqlparser.expression.*;
+import net.sf.jsqlparser.expression.operators.arithmetic.*;
 import net.sf.jsqlparser.expression.operators.relational.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import net.sf.jsqlparser.expression.operators.arithmetic.Addition;
-import net.sf.jsqlparser.expression.operators.arithmetic.BitwiseAnd;
-import net.sf.jsqlparser.expression.operators.arithmetic.BitwiseOr;
-import net.sf.jsqlparser.expression.operators.arithmetic.BitwiseXor;
-import net.sf.jsqlparser.expression.operators.arithmetic.Concat;
-import net.sf.jsqlparser.expression.operators.arithmetic.Division;
-import net.sf.jsqlparser.expression.operators.arithmetic.Modulo;
-import net.sf.jsqlparser.expression.operators.arithmetic.Multiplication;
-import net.sf.jsqlparser.expression.operators.arithmetic.Subtraction;
 import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
 import net.sf.jsqlparser.expression.operators.conditional.OrExpression;
 import net.sf.jsqlparser.schema.Column;
@@ -65,6 +57,11 @@ public class ExpressionVisitorImpl implements ExpressionVisitor {
             inExpression.getLeftItemsList().accept(new ItemsListVisitorImpl());
         }
         inExpression.getRightItemsList().accept(new ItemsListVisitorImpl());
+    }
+
+    @Override
+    public void visit(FullTextSearch fullTextSearch) {
+
     }
 
     // 子查询
@@ -135,6 +132,11 @@ public class ExpressionVisitorImpl implements ExpressionVisitor {
     @Override
     public void visit(Division division) {
         visitBinaryExpression(division);
+    }
+
+    @Override
+    public void visit(IntegerDivision integerDivision) {
+
     }
 
     // 乘法
@@ -267,9 +269,9 @@ public class ExpressionVisitorImpl implements ExpressionVisitor {
     }
 
     // wgexpr??
-    @Override
-    public void visit(WithinGroupExpression wgexpr) {
-    }
+//    @Override
+//    public void visit(WithinGroupExpression wgexpr) {
+//    }
 
     // eexpr??
     @Override
@@ -326,6 +328,11 @@ public class ExpressionVisitorImpl implements ExpressionVisitor {
     public void visit(MySQLGroupConcat groupConcat) {
     }
 
+    @Override
+    public void visit(ValueListExpression valueListExpression) {
+
+    }
+
     // table列
     @Override
     public void visit(Column tableColumn) {
@@ -361,6 +368,16 @@ public class ExpressionVisitorImpl implements ExpressionVisitor {
     public void visit(TimestampValue timestampValue) {
     }
 
+    @Override
+    public void visit(BitwiseRightShift bitwiseRightShift) {
+
+    }
+
+    @Override
+    public void visit(BitwiseLeftShift bitwiseLeftShift) {
+
+    }
+
     // 空值
     @Override
     public void visit(NullValue nullValue) {
@@ -381,6 +398,11 @@ public class ExpressionVisitorImpl implements ExpressionVisitor {
     public void visit(IsNullExpression isNullExpression) {
     }
 
+    @Override
+    public void visit(IsBooleanExpression isBooleanExpression) {
+
+    }
+
     // literal?
     @Override
     public void visit(DateTimeLiteralExpression literal) {
@@ -391,6 +413,27 @@ public class ExpressionVisitorImpl implements ExpressionVisitor {
     public void visit(NotExpression notExpression) {
 
     }
+
+    @Override
+    public void visit(NextValExpression nextValExpression) {
+
+    }
+
+    @Override
+    public void visit(CollateExpression collateExpression) {
+
+    }
+
+    @Override
+    public void visit(SimilarToExpression similarToExpression) {
+
+    }
+
+    @Override
+    public void visit(ArrayExpression arrayExpression) {
+
+    }
+
     @Override
     public void visit(JsonOperator jsonOperator) {
 
