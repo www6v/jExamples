@@ -1,11 +1,5 @@
 package javacore.interceptor.sqlinterceptor;
 
-
-//import com.honeywell.mom.common.config.datapriviliges.SysTableExt;
-//import com.honeywell.mom.common.config.datapriviliges.SysTableExtService;
-
-//import com.honeywell.mom.upms.common.domain.SysRole;
-//import com.honeywell.mom.upms.common.domain.SysUser;
 import javacore.interceptor.sqlinterceptor.visitor.SelectVisitorImpl;
 import net.sf.jsqlparser.JSQLParserException;
 import net.sf.jsqlparser.parser.CCJSqlParserManager;
