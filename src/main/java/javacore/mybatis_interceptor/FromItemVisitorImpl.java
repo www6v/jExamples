@@ -19,12 +19,7 @@ import net.sf.jsqlparser.expression.operators.relational.MinorThanEquals;
 import net.sf.jsqlparser.expression.operators.relational.NotEqualsTo;
 import net.sf.jsqlparser.schema.Column;
 import net.sf.jsqlparser.schema.Table;
-import net.sf.jsqlparser.statement.select.FromItemVisitor;
-import net.sf.jsqlparser.statement.select.LateralSubSelect;
-import net.sf.jsqlparser.statement.select.SubJoin;
-import net.sf.jsqlparser.statement.select.SubSelect;
-import net.sf.jsqlparser.statement.select.TableFunction;
-import net.sf.jsqlparser.statement.select.ValuesList;
+import net.sf.jsqlparser.statement.select.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -97,7 +92,7 @@ public class FromItemVisitorImpl implements FromItemVisitor {
     @Override
     public void visit(SubJoin subjoin) {
         subjoin.getLeft().accept(new FromItemVisitorImpl());
-        subjoin.getJoin().getRightItem().accept(new FromItemVisitorImpl());
+//        subjoin.getJoin().getRightItem().accept(new FromItemVisitorImpl());
     }
 
     // FROM 横向子查询
@@ -115,6 +110,11 @@ public class FromItemVisitorImpl implements FromItemVisitor {
     // FROM tableFunction
     @Override
     public void visit(TableFunction tableFunction) {
+    }
+
+    @Override
+    public void visit(ParenthesisFromItem parenthesisFromItem) {
+
     }
 
     // 将字符串类型的运算符转换成数据库运算语句

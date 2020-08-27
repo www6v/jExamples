@@ -12,6 +12,7 @@ import net.sf.jsqlparser.statement.select.SelectItem;
 import net.sf.jsqlparser.statement.select.SelectVisitor;
 import net.sf.jsqlparser.statement.select.SetOperationList;
 import net.sf.jsqlparser.statement.select.WithItem;
+import net.sf.jsqlparser.statement.values.ValuesStatement;
 
 public class SelectVisitorImpl implements SelectVisitor {
     // 主要工作就是实现各种底层visitor，然后在解析的时候添加条件
@@ -84,6 +85,11 @@ public class SelectVisitorImpl implements SelectVisitor {
     @Override
     public void visit(WithItem withItem) {
         withItem.getSelectBody().accept(new SelectVisitorImpl());
+    }
+
+    @Override
+    public void visit(ValuesStatement valuesStatement) {
+
     }
 
 }
