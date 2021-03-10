@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
  * Created by wangwei110 on 2018/8/23.
  */
 public class CollectionTest {
+    private static final int DOCUMENT_SIZE = 1 << 10;
     public static void main(String args[]){
 //        listSort();
 //        treeSet();

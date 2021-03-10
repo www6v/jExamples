@@ -1,16 +1,19 @@
 
 
 object RoomKeyedStateFunction {
-
+  private val DOCUMENT_SIZE = 1 << 10
   val LEAVE = "leave"
   val JOIN = "join"
   def main(args: Array[String]) {
+    System.out.println("actions" + DOCUMENT_SIZE)
+  }
 
+  def method(): Unit ={
     var actions: Set[String] = Set();
     actions = actions + ("join23")
     actions = actions + ("join21")
     actions = actions + ("leave21")
-//    actions = actions + ("leave23")
+    //    actions = actions + ("leave23")
 
     System.out.println("actions" + actions)
 
