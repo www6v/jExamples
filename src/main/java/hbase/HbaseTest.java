@@ -11,16 +11,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HbaseTest {
+    public final String tableName = "t_user_info1-20201226-111";
+
     public static void main(String args[]) {
         HbaseTest hbaseTest = new HbaseTest();
         try {
             hbaseTest.init();
-           hbaseTest.createTable();
-            hbaseTest.testPut();
-            hbaseTest.testGet();
-            hbaseTest.modifyTable();
 
-            hbaseTest.testDelData();
+            hbaseTest.createTable();
+
+            while(true) {
+                hbaseTest.testPut();
+                hbaseTest.testGet();
+                hbaseTest.modifyTable();
+                hbaseTest.testDelData();
+            }
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,21 +48,23 @@ public class HbaseTest {
     public void createTable() throws IOException {
         Admin admin = conn.getAdmin();
 
-        HTableDescriptor table = new HTableDescriptor(TableName.valueOf("t_user_info".getBytes()));
+        HTableDescriptor table = new HTableDescriptor(TableName.valueOf(tableName.getBytes()));
+//        HTableDescriptor table = new HTableDescriptor(TableName.valueOf("t_user_info".getBytes()));
+
 
         HColumnDescriptor hcd  = new HColumnDescriptor("base_info");
         hcd .setVersions( 1, 2 );
         table.addFamily(hcd );
         admin.createTable(table);
 
-        admin.close();
-        conn.close();
+//        admin.close();
+//        conn.close();
     }
 
 
     public void testPut() throws IOException {
 
-        Table table = conn.getTable(TableName.valueOf("t_user_info"));
+        Table table = conn.getTable(TableName.valueOf(tableName));
 
         ArrayList<Put> puts = new ArrayList<Put>();
         Put put   = new Put(Bytes.toBytes("user"));
@@ -65,11 +74,13 @@ public class HbaseTest {
 
         table.put(puts);
         table.close();
-        conn.close();
+//        conn.close();
+
+        System.out.println("testPut:" + "testPut:" + "testPut:" + "testPut:" + "testPut");
     }
 
     public void testGet() throws IOException {
-        Table table = conn.getTable(TableName.valueOf("t_user_info"));
+        Table table = conn.getTable(TableName.valueOf(tableName));
         Get get = new Get("user".getBytes());
         Result result = table.get(get);
         List<Cell> cells = result.listCells();
@@ -85,13 +96,13 @@ public class HbaseTest {
             System.out.println(new String(valueBytes));
         }
         table.close();
-        conn.close();
+//        conn.close();
     }
 
 
     public void modifyTable() throws IOException {
         Admin admin = conn.getAdmin();
-        HTableDescriptor table = admin.getTableDescriptor(TableName.valueOf("t_user_info"));
+        HTableDescriptor table = admin.getTableDescriptor(TableName.valueOf(tableName));
 
 //        HColumnDescriptor hcd  = table.getFamily("extra_info".getBytes());
 //        hcd.setVersions(2, 3);
@@ -100,13 +111,13 @@ public class HbaseTest {
 
         admin.modifyTable(TableName.valueOf("t_user_info"), table);
 
-        admin.close();
-        conn.close();
+//        admin.close();
+//        conn.close();
     }
 
     @Test
     public void testDelData() throws IOException {
-        Table table = conn.getTable(TableName.valueOf("t_user_info"));
+        Table table = conn.getTable(TableName.valueOf(tableName));
         Delete delete = new Delete("user".getBytes());
 
 //        delete.addColumn("base_info".getBytes(),"password".getBytes());
@@ -116,7 +127,7 @@ public class HbaseTest {
         table.delete(delete);
 
         table.close();
-        conn.close();
+//        conn.close();
     }
 }
 
