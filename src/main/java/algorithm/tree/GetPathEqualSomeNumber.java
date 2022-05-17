@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.tree;
 
 /**
  * Created by wangwei110 on 2018/5/21.
@@ -9,11 +9,14 @@ import java.util.LinkedList;
 class BinaryNode{
     BinaryNode left;
     BinaryNode right;
+
     int value;
+
     BinaryNode(){
         left = null;
         right = null;
     }
+
     BinaryNode(int value){
         this.value = value;
         left = null;
@@ -21,17 +24,22 @@ class BinaryNode{
     }
 
     private static int sum = 0;
+
     private static LinkedList<Integer> path = new LinkedList<Integer>();
+
     void PrintAllPathsEqualsSomeNumber(int num){
         path.add(value);
         sum += value;
+
         if(sum == num)
             System.out.println(path.toString());
+
         if(left != null){
             left.PrintAllPathsEqualsSomeNumber(num);
             sum -= left.value;
             path.remove(path.size() - 1);
         }
+
         if(right != null){
             right.PrintAllPathsEqualsSomeNumber(num);
             sum -= right.value;
