@@ -1,10 +1,11 @@
 package algorithm.tree;
 
 /**
- * Created by wangwei110 on 2018/5/21.
  * 在一棵二叉树中，找寻节点和为某个值的路径
+ * 解法：BFS
  */
 import java.util.LinkedList;
+import java.util.Queue;
 
 class BinaryNode{
     BinaryNode left;
@@ -25,7 +26,7 @@ class BinaryNode{
 
     private static int sum = 0;
 
-    private static LinkedList<Integer> path = new LinkedList<Integer>();
+    private static Queue<Integer> path = new LinkedList<Integer>();
 
     void PrintAllPathsEqualsSomeNumber(int num){
         path.add(value);
@@ -50,7 +51,6 @@ class BinaryNode{
 
 public class GetPathEqualSomeNumber {
     public static void main(String[] args) {
-        /*******************build tree*********************************/
         BinaryNode root = new BinaryNode(4);
         root.left = new BinaryNode(2);
         root.left.left = new BinaryNode(1);
@@ -62,6 +62,5 @@ public class GetPathEqualSomeNumber {
         root.right.right.right = new BinaryNode(8);
 
         root.PrintAllPathsEqualsSomeNumber(15);
-        /***************************************************************/
     }
 }
