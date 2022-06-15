@@ -1,4 +1,4 @@
-package algorithm.aiqiyi;
+package algorithm.company.aiqiyi;
 
 import java.util.*;
 

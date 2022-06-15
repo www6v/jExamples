@@ -1,4 +1,4 @@
-package algorithm.intel;
+package algorithm.company.intel;
 
 /// 5*5的格子，从左下角走到右上角
 public class Solution {

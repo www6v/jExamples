@@ -1,4 +1,4 @@
-package algorithm.qiniu;
+package algorithm.company.qiniu;
 
 /// 删除数组中的重复项
 public class Solution {
