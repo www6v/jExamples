@@ -3,6 +3,7 @@ package algorithm.company.aiqiyi;
 import java.util.*;
 
 /// merge two sorted array
+/// 合并有序数组  LeetCode 88
 public class Solution {
     public void merge(int[] nums1, int m, int[] nums2,int n) {
         for (int i = 0; i != n; ++i) {
