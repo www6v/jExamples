@@ -2,10 +2,6 @@ package algorithm.company.dataVisor;
 
 /// 排序链表
 public class Solution {
-    public void methodA(int[] nums1, int m) {
-
-    }
-
     class ListNode {
         public int value;
         public ListNode next;

@@ -2,7 +2,8 @@ package algorithm.stackQueue;
 
 import java.util.EmptyStackException;
 
-public class Stack {
+/// 用数组来实现栈
+public class ArrayStack {
     /**
      * 栈顶指针,-1代表空栈
      */
@@ -22,7 +23,7 @@ public class Stack {
     private int size;
 
 
-    public Stack() {
+    public ArrayStack() {
         array = new int[capacity];
     }
 
@@ -77,7 +78,7 @@ public class Stack {
     }
 
     public static void main(String[] args) {
-        Stack s=new Stack();
+        ArrayStack s=new ArrayStack();
         s.push(1);
         s.push(2);
         s.push(3);
@@ -90,7 +91,6 @@ public class Stack {
         System.out.println("s.peek->"+s.peek());
         System.out.println("s.pop->"+s.pop());
         System.out.println("s.isEmpty->"+s.isEmpty());
-
     }
 }
 
