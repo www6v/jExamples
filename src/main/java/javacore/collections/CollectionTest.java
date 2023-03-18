@@ -1,7 +1,5 @@
 package javacore.collections;
 
-import com.sun.org.apache.bcel.internal.generic.FLOAD;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
