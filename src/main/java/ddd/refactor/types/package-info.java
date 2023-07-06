@@ -1,0 +1,1 @@
+package ddd.refactor.types;
