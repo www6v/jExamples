@@ -18,16 +18,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-
-
-//编程题：
-//        题目描述：有一个40G的大文件，文件内容都是标准的英文单词，单词和单词之间用标准的空格分割，请设计实现统计单词个数的功能。
-//        要求：
-//        1)运行环境：8核32G服务器
-//        2)语言要求：java实现
-//        3)稳定快速
-
-
 public class WordCount {
     private static final int THREAD_COUNT=8;
     public static void main(String args[]) throws Exception {
