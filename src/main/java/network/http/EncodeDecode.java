@@ -1,5 +1,8 @@
 package network.http;
 
+import org.apache.commons.lang.StringEscapeUtils;
+import org.springframework.web.util.HtmlUtils;
+
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
@@ -20,5 +23,10 @@ public class EncodeDecode {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+        String s = StringEscapeUtils.unescapeHtml("&gt;");
+
+        System.out.println(s);;
     }
 }
