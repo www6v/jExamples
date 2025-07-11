@@ -383,6 +383,12 @@
             <version>21.0</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>com.jcl</groupId>
+            <artifactId>JclFormulaEngine</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 
