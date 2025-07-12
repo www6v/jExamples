@@ -1,11 +1,11 @@
-package algo.company.ebayK8s;
+package algo.array.ebayK8s;
 
 import java.util.Random;
 
 
 ///  题目: array中第n大的数字
 ///  结果不太对[todo]
-public class Solution {
+public class Leetcode215 {
 
     public static void main(String args[]) {
        int[]  nums = {5,39, 7, 56, 23 , 3};

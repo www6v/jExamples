@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /// Leetcode 206
-public class ReverseList {
+public class Leetcode206_ReverseList {
 
     public static void main(String args[]) {
         Node node1 = new Node(1);

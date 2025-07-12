@@ -2,7 +2,7 @@ package algo.list;
 
 /// Leetcode 2. 两数相加 : 合并两个链表中的数，并返回一个新的链表
 /// https://leetcode.cn/problems/add-two-numbers/solution/liang-shu-xiang-jia-by-leetcode-solution/
-class AddTwoList {
+class Leetcode2_AddTwoList {
 
     public class ListNode {
        int val;

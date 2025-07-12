@@ -2,7 +2,7 @@ package algo.string;
 
 // Leetcode 3. 无重复字符的最长子串
 // 链接：https://leetcode.cn/problems/longest-substring-without-repeating-characters/solution/wu-zhong-fu-zi-fu-de-zui-chang-zi-chuan-cshi-xian-/
-public class LongestSubstring  {
+public class Leetcode3_LongestSubstring  {
     public static void main(String args[]) {
         String s = "abcabcbb";
         String s1 = "pwwkew";

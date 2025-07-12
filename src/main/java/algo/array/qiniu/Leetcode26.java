@@ -1,4 +1,4 @@
-package algo.company.qiniu;
+package algo.array.qiniu;
 
 /// Leetcode26.   删除数组中的重复项, 空间复杂度为O(1)
 public class Leetcode26 {

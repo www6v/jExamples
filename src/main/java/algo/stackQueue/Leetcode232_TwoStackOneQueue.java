@@ -4,11 +4,11 @@ import java.util.Stack;
 
 /// 232. 用栈实现队列 - 官方题解
 /// https://leetcode.cn/problems/implement-queue-using-stacks/solution/yong-zhan-shi-xian-dui-lie-by-leetcode-s-xnb6/
-public class TwoStackOneQueue {
+public class Leetcode232_TwoStackOneQueue {
     Stack<Integer> inStack;
     Stack<Integer> outStack;
 
-    public TwoStackOneQueue() {
+    public Leetcode232_TwoStackOneQueue() {
         inStack = new Stack<Integer>();
         outStack = new Stack<Integer>();
     }

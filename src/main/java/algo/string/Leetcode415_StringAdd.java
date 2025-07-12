@@ -2,7 +2,7 @@ package algo.string;
 
 /// Leetcode 415. 字符串相加: 字符串表示的数字相加
 /// https://leetcode.cn/problems/add-strings/solution/add-strings-shuang-zhi-zhen-fa-by-jyd/
-class StringAdd {
+class Leetcode415_StringAdd {
     public String addStrings(String num1, String num2) {
         StringBuilder res = new StringBuilder("");
         int i = num1.length() - 1, j = num2.length() - 1, carry = 0;

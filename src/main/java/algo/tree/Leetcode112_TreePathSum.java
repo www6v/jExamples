@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /// 链接：https://leetcode.cn/problems/path-sum/solution/lu-jing-zong-he-by-leetcode-solution/
-public class TreePathSum {
+public class Leetcode112_TreePathSum {
 
     class TreeNode {
        int val;

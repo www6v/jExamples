@@ -1,4 +1,4 @@
-package algo.company.dataVisor;
+package algo.list.dataVisor;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.StreamEntryID;

@@ -2,7 +2,7 @@ package algo.list;
 
 //  Leetcode 21
 //  链接：https://leetcode.cn/problems/merge-two-sorted-lists/solution/he-bing-liang-ge-you-xu-lian-biao-by-leetcode-solu/
-public class MergeTwoListsSolution {
+public class Leetcode21_MergeTwoListsSolution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode prehead = new ListNode(-1);
 

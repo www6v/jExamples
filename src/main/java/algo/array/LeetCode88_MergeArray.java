@@ -3,7 +3,7 @@ package algo.array;
 import java.util.Arrays;
 
 /// 合并有序数组  LeetCode 88
-public class MergeArray {
+public class LeetCode88_MergeArray {
 
 }
 

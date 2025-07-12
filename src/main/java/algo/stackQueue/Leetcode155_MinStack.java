@@ -5,11 +5,11 @@ import java.util.Stack;
 /// https://leetcode.cn/problems/min-stack/solution/zui-xiao-zhan-by-leetcode-solution/
 /// Leetcode 155
 /// 方法一：辅助栈
-public class MinStack {
+public class Leetcode155_MinStack {
     Stack<Integer> xStack;
     Stack<Integer> minStack;
 
-    public MinStack() {
+    public Leetcode155_MinStack() {
         xStack = new Stack<Integer>();
         minStack = new Stack<Integer>();
         minStack.push(Integer.MAX_VALUE);

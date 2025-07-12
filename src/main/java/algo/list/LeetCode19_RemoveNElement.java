@@ -1,7 +1,7 @@
 package algo.list;
 
 /// LeetCode 19
-public class RemoveNElement {
+public class LeetCode19_RemoveNElement {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode first = head;
         ListNode second = head;

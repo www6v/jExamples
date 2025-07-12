@@ -1,7 +1,7 @@
 package algo.company.ebay;
 
 /// 是否是平衡二叉树
-public class Solution {
+public class LeetcodeLCR176 {
 
     static class TreeNode {
         public int val;
